@@ -1,5 +1,5 @@
-# Stage 1: Build with Maven + JDK 21
-FROM maven:3.9.8-eclipse-temurin-21 AS builder
+# Stage 1: Build with Maven + JDK 17
+FROM maven:3.9.8-eclipse-temurin-17 AS builder
 
 WORKDIR /workspace
 
@@ -11,8 +11,8 @@ RUN mvn dependency:go-offline -B
 COPY src ./src
 RUN mvn package -DskipTests -B
 
-# Stage 2: Run with JRE 21
-FROM eclipse-temurin:21-jre-alpine AS runtime
+# Stage 2: Run with JRE 17
+FROM eclipse-temurin:17-jre-alpine AS runtime
 
 WORKDIR /app
 
