@@ -14,7 +14,7 @@ public class DemoAPIController {
 		try {
 			String ip = InetAddress.getLocalHost().getHostAddress();
 			String hostname = java.net.InetAddress.getLocalHost().getHostName();
-			return "Hello There from IP: " + ip + ", Hostname: " + hostname;
+			return "Hello There from MIT, IP: " + ip + ", Hostname: " + hostname;
 		} catch (java.net.UnknownHostException e) {
 			return "Unable to retrieve IP address and hostname.";
 		}
